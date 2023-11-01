@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Calculator by Santiago Cabrerizo</h1>
+
+    <div id="calculator">
+        <form name="calculator">
+
+            <div id="containerInp">
+                <input id="operation" type="text" name="operation" value="" disabled>
+                <input id="ans" type="text" name="ans" value="0" disabled>
+            </div>
+
+            <div id="containerBtn">
+                <input type="reset" value="C">
+                <input class="btn-color" type="button" value="^" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='**'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'**';
+                }">
+                <input class="btn-color" type="button" value="%" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='%'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'%';
+                }">
+                <input class="btn-color" type="button" value="/" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='/'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'/';
+                }">
+                <br>
+                <input type="button" value="7" onclick="document.calculator.operation.value+='7'">
+                <input type="button" value="8" onclick="document.calculator.operation.value+='8'">
+                <input type="button" value="9" onclick="document.calculator.operation.value+='9'">
+                <input class="btn-color" type="button" value="X" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='*'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'*';
+                }">
+                <br>
+                <input type="button" value="4" onclick="document.calculator.operation.value+='4'">
+                <input type="button" value="5" onclick="document.calculator.operation.value+='5'">
+                <input type="button" value="6" onclick="document.calculator.operation.value+='6'">
+                <input class="btn-color" type="button" value="-" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='-'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'-';
+                }">
+                <br>
+                <input type="button" value="1" onclick="document.calculator.operation.value+='1'">
+                <input type="button" value="2" onclick="document.calculator.operation.value+='2'">
+                <input type="button" value="3" onclick="document.calculator.operation.value+='3'">
+                <input class="btn-color" type="button" value="+" onclick="if(document.calculator.ans.value == '0'){
+                    document.calculator.operation.value+='+'
+                }else{
+                    document.calculator.operation.value=document.calculator.ans.value+'+';
+                }">
+                <br>
+                <input type="button" value="0" onclick="document.calculator.operation.value+='0'">
+                <input type="button" value="." onclick="document.calculator.operation.value+='.'">
+                <input id="equals" type="button" value="=" onclick="if(document.calculator.operation.value != ''){
+                        document.calculator.ans.value=eval(document.calculator.operation.value)
+                    }">
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
